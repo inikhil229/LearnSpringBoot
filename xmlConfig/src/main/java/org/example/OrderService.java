@@ -6,14 +6,14 @@ public class OrderService {
 
     private PaymentService payment;
 
-//    public OrderService(PaymentService payment){
-//        this.payment = payment;
-//        System.out.println("order service created by ioc");
-//    }
-
-    public void setPaymentService(PaymentService payment){
+    public OrderService(PaymentService payment){
         this.payment = payment;
+        System.out.println("order service created by ioc");
     }
+
+//    public void setPaymentService(PaymentService payment){
+//        this.payment = payment;
+//    }
 
 
     public void placeOrder(){

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     static void main() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
 //        OrderService order = (OrderService) context.getBean("orderService"); // get bean by bean's unique id
 
@@ -13,11 +13,22 @@ public class Main {
 
         // way to get multiple beans using the bean type with the same class name but with different ids
 //        OrderService order2 = context.getBean("orderService2",OrderService.class);
-        OrderService order = context.getBean(OrderService.class);
+//        OrderService order = context.getBean(OrderService.class);
 
 //        PaymentService payment = context.getBean(PaymentService.class);
 
-        order.placeOrder();
+//        order.placeOrder();
 //        payment.pay();
+
+        UserService user = context.getBean(UserService.class);
+//
+//        UserService user2 = context.getBean(UserService.class);
+//
+//        System.out.println(user == user2);
+
+//        System.out.println(user.getUsername());
+
+        context.close();
+
     }
 }

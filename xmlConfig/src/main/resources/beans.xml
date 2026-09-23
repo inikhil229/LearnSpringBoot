@@ -6,17 +6,39 @@
 
     <!-- bean definitions here -->
 
-    <bean id="orderService" class="org.example.OrderService">
-<!--        <constructor-arg ref="paymentService"/>   &lt;!&ndash; used for the constructor injection&ndash;&gt;-->
-        <property name="paymentService" ref="paymentService"/> <!-- property tag is used when using the settter method injection-->
-    </bean>
+<!--    <bean id="orderService" class="org.example.OrderService">-->
+<!--&lt;!&ndash;        <constructor-arg ref="paymentService"/>   &lt;!&ndash; used for the constructor injection&ndash;&gt;&ndash;&gt;-->
+<!--        <property name="paymentService" ref="paymentService"/> &lt;!&ndash; property tag is used when using the settter method injection&ndash;&gt;-->
+<!--    </bean>-->
 <!--    <bean id="orderService2" class="org.example.OrderService"/>  &lt;!&ndash;get bean by type will not work if there's 2 bean with the same class name&ndash;&gt;-->
 
-    <bean id="paymentService" class="org.example.PaymentService">
-        <constructor-arg value="UPI" />
-        <constructor-arg value="1"/>
-    </bean>
+<!--    <bean id="paymentService" class="org.example.PaymentService">-->
+<!--        <constructor-arg value="UPI" />-->
+<!--        <constructor-arg value="1"/>-->
+<!--    </bean>-->
 
+
+
+<!--    <bean id="upiPaymentService" class="org.example.UpiPaymentService" scope="prototype"/>-->
+<!--    <bean id="cardPaymentService" class="org.example.CardPaymentService"/>-->
+
+<!--    <bean id="orderService" class="org.example.OrderService">-->
+<!--        <constructor-arg ref="cardPaymentService" />-->
+<!--        &lt;!&ndash;    when there are 2 beans, pass the bean id to the args constructor's ref  - ex payment interface and 2 implementations&ndash;&gt;-->
+<!--    </bean>-->
+
+
+
+<!--    <bean id="userService"  class="org.example.UserService">-->
+<!--        <constructor-arg name="username">-->
+<!--            <list>-->
+<!--                <value>Nikhil</value>-->
+<!--                <value>Raikwar</value>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+    <bean id="userService" class="org.example.UserService" init-method="init" destroy-method="cleanup"/>
 
 
 
